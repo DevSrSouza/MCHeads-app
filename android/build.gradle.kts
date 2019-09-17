@@ -44,8 +44,16 @@ val room_version = "2.1.0" // 2.2.0-rc01 (para salvar localmente as heads)
 val coil_version = "0.7.0"
 val retrofit_version = "2.6.0"
 
+repositories {
+    mavenLocal()
+}
+
 dependencies {
     implementation(kotlin("stdlib"))
+
+    // MCHeads retrofit client
+    implementation("br.com.devsrsouza.mcheads:shared-jvm:0.0.1")
+    implementation("br.com.devsrsouza.mcheads:client-retrofit:0.0.1")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version")

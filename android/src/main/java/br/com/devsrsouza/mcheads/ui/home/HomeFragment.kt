@@ -1,4 +1,4 @@
-package br.com.devsrsouza.mcheads.home
+package br.com.devsrsouza.mcheads.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

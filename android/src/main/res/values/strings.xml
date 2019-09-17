@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MCHeads</string>
+    <string name="image_head_description">head image downloaded head from the database</string>
 </resources>
