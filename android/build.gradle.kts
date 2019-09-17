@@ -8,6 +8,26 @@ plugins {
 
 android {
     compileSdkVersion(28)
+    buildToolsVersion = "29.0.0"
+    defaultConfig {
+        applicationId = "br.com.devsrsouza.mcheads"
+        minSdkVersion(19)
+        targetSdkVersion(28)
+        versionCode = 1
+        versionName = "1.0"
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    dataBinding {
+        isEnabled = true
+    }
+
+    androidExtensions {
+        isExperimental = true
+    }
 }
 
 val kotlin_coroutines_version = "1.3.1"
@@ -51,8 +71,6 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
 
     implementation("androidx.legacy:legacy-support-v4:$legacy_support_v4_version")
-
-
 
     // coil
     implementation("io.coil-kt:coil:0.7.0")
