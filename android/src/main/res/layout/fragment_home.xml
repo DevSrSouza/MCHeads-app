@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="br.com.devsrsouza.mcheads.home.HomeViewModel"/>
+                type="br.com.devsrsouza.mcheads.ui.home.HomeViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +15,7 @@
             >
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/head_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="true"

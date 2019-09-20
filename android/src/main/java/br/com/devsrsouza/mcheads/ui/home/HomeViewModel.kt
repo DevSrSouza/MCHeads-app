@@ -15,8 +15,8 @@ enum class HeadApiRequestStatus { LOADING, ERROR, DONE }
 
 class HomeViewModel : ViewModel() {
 
-    val job = Job()
-    val scope: CoroutineScope = CoroutineScope(Dispatchers.Main + job)
+    private var job = Job()
+    private val scope = CoroutineScope(Dispatchers.Main + job)
 
     //LiveData
     private val _status = MutableLiveData<HeadApiRequestStatus>()

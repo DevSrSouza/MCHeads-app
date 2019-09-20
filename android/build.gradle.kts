@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -28,6 +30,11 @@ android {
     androidExtensions {
         isExperimental = true
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 val kotlin_coroutines_version = "1.3.1"
@@ -49,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(kotlin("stdlib-jdk7"))
 
     // MCHeads retrofit client
     implementation("br.com.devsrsouza.mcheads:shared-jvm:0.0.1")
@@ -75,11 +82,17 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:$lifecycle_version")
 
     // room
-    implementation("androidx.room:room-runtime:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
+    //implementation("androidx.room:room-runtime:$room_version")
+    //kapt("androidx.room:room-compiler:$room_version")
 
     implementation("androidx.legacy:legacy-support-v4:$legacy_support_v4_version")
 
     // coil
     implementation("io.coil-kt:coil:0.7.0")
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
