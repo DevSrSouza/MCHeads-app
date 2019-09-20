@@ -26,15 +26,15 @@ class HomeViewModel : ViewModel() {
     val heads: LiveData<List<Head>> get() = _heads
 
     init {
-        loadHeads()
+        getHeads(HeadCategory.FOOD_AND_DRINKS)
     }
 
-    private fun loadHeads() {
+    private fun getHeads(category: HeadCategory) {
         scope.launch {
             try {
                 _status.value = HeadApiRequestStatus.LOADING
 
-                _heads.value = HeadApi.service.searchCategory(HeadCategory.FOOD_AND_DRINKS)
+                _heads.value = HeadApi.service.searchCategory(category)
 
                 _status.value = HeadApiRequestStatus.DONE
             } catch (e: Throwable) {
@@ -42,6 +42,10 @@ class HomeViewModel : ViewModel() {
                 _heads.value = listOf()
             }
         }
+    }
+
+    fun updateCategory(category: HeadCategory) {
+        getHeads(category)
     }
 
     override fun onCleared() {

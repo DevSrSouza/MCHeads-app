@@ -17,7 +17,9 @@ fun ImageView.headRender(head: Head?) {
 }
 
 @BindingAdapter("head_grid_adapter")
-fun RecyclerView.recyclerViewGridAdapter(data: List<Head>) {
-    val adapter = adapter as HeadGridAdapter
-    adapter.submitList(data)
+fun RecyclerView.recyclerViewGridAdapter(data: List<Head>?) {
+    data?.let {
+        val adapter = adapter as HeadGridAdapter
+        adapter.submitList(it)
+    }
 }

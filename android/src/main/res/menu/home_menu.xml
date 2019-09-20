@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search_item"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/categories_item"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Categories"
+        app:showAsAction="ifRoom">
+        <menu >
+            <item
+                android:id="@+id/alphabet_item"
+                android:title="Alphabet" />
+            <item
+                android:id="@+id/monsters_item"
+                android:title="Monsters" />
+            <item
+                android:id="@+id/humanoid_item"
+                android:title="Humanoid" />
+            <item
+                android:id="@+id/food_and_drinks_item"
+                android:title="Food and Drinks" />
+            <item
+                android:id="@+id/miscellaneous_item"
+                android:title="Miscellaneous" />
+            <item
+                android:id="@+id/plants_item"
+                android:title="Plants" />
+            <item
+                android:id="@+id/decoration_item"
+                android:title="Decoration" />
+            <item
+                android:id="@+id/blocks_item"
+                android:title="Blocks" />
+            <item
+                android:id="@+id/animals_item"
+                android:title="Animals" />
+            <item
+                android:id="@+id/humans_item"
+                android:title="Humans" />
+        </menu>
+    </item>
+</menu>
