@@ -12,6 +12,7 @@ fun ImageView.headRender(head: Head?) {
     head?.let {
         load(it.imageUrl) {
             placeholder(R.drawable.default_head)
+            error(R.drawable.default_head)
         }
     }
 }

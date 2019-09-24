@@ -26,6 +26,8 @@ class HomeFragment : Fragment() {
         binding.headList.adapter = HeadGridAdapter()
         binding.executePendingBindings()
 
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
