@@ -2,4 +2,7 @@
 <resources>
     <dimen name="image_head_padding">16dp</dimen>
     <dimen name="grid_head_card">160dp</dimen>
+    <dimen name="constraint_card_margin">4dp</dimen>
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="grid_margin">8dp</dimen>
 </resources>

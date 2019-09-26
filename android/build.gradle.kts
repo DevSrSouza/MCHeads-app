@@ -52,6 +52,8 @@ val constraint_layout_version = "1.1.3" // 2.0.0-beta02
 val legacy_support_v4_version = "1.0.0"
 val room_version = "2.1.0" // 2.2.0-rc01 (para salvar localmente as heads)
 
+val material_version = "1.1.0-alpha10"
+
 val coil_version = "0.7.0"
 val retrofit_version = "2.6.0"
 
@@ -93,6 +95,9 @@ dependencies {
 
     // coil
     implementation("io.coil-kt:coil:0.7.0")
+
+    // material
+    implementation("com.google.android.material:material:$material_version")
 }
 
 tasks.withType<KotlinCompile> {

@@ -12,19 +12,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp">
+            android:layout_marginStart="@dimen/constraint_card_margin"
+            android:layout_marginTop="@dimen/constraint_card_margin"
+            android:layout_marginEnd="@dimen/constraint_card_margin"
+            android:layout_marginBottom="@dimen/constraint_card_margin">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/grid_head_card"
                 android:layout_height="@dimen/grid_head_card"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                app:cardCornerRadius="3dp"
+                android:layout_marginStart="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginEnd="@dimen/card_margin"
+                android:layout_marginBottom="@dimen/card_margin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,21 +34,21 @@
                     android:layout_height="match_parent">
 
                 <ImageView
-                        android:id="@+id/head_image"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="@dimen/image_head_padding"
-                        android:layout_marginEnd="@dimen/image_head_padding"
-                        android:layout_marginBottom="@dimen/image_head_padding"
-                        android:contentDescription="@string/image_head_description"
-                        app:head_render="@{head}"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@mipmap/default_head" />
+                    android:id="@+id/head_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/image_head_padding"
+                    android:layout_marginTop="@dimen/image_head_padding"
+                    android:layout_marginEnd="@dimen/image_head_padding"
+                    android:layout_marginBottom="@dimen/image_head_padding"
+                    android:contentDescription="@string/image_head_description"
+                    app:head_render="@{head}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@mipmap/default_head" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
