@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MCHeads</string>
+    <string name="image_head_description">Uma imagem de uma cabeça de um jogador com sua skin do minecraft</string>
+    <string name="categories_menu_item_name">Categorias</string>
+    <string name="alphabet_menu_item_name">Alfabeto</string>
+    <string name="search_menu_item_name">Pesquisar</string>
+    <string name="monsters_menu_item_name">Monstros</string>
+    <string name="humanoid_menu_item_name">Humanóide</string>
+    <string name="food_and_drinks_menu_item_name">Comidas e Bebidas</string>
+    <string name="miscellaneous_menu_item_name">Diversos</string>
+    <string name="plants_menu_item_name">Plantas</string>
+    <string name="decoration_menu_item_name">Decoração</string>
+    <string name="blocks_menu_item_name">Blocos</string>
+    <string name="animals_menu_item_name">Animais</string>
+    <string name="humans_menu_item_name">Humanos</string>
+</resources>

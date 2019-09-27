@@ -1,7 +1,8 @@
-package br.com.devsrsouza.mcheads
+package br.com.devsrsouza.mcheads.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.com.devsrsouza.mcheads.R
 
 class MainActivity : AppCompatActivity() {
 

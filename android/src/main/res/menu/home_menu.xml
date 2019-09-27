@@ -4,47 +4,47 @@
 
     <item
         android:id="@+id/search_item"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search_menu_item_name"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/categories_item"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Categories"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/categories_menu_item_name"
         app:showAsAction="ifRoom">
         <menu >
             <item
                 android:id="@+id/alphabet_item"
-                android:title="Alphabet" />
+                android:title="@string/alphabet_menu_item_name" />
             <item
                 android:id="@+id/monsters_item"
-                android:title="Monsters" />
+                android:title="@string/monsters_menu_item_name" />
             <item
                 android:id="@+id/humanoid_item"
-                android:title="Humanoid" />
+                android:title="@string/humanoid_menu_item_name" />
             <item
                 android:id="@+id/food_and_drinks_item"
-                android:title="Food and Drinks" />
+                android:title="@string/food_and_drinks_menu_item_name" />
             <item
                 android:id="@+id/miscellaneous_item"
-                android:title="Miscellaneous" />
+                android:title="@string/miscellaneous_menu_item_name" />
             <item
                 android:id="@+id/plants_item"
-                android:title="Plants" />
+                android:title="@string/plants_menu_item_name" />
             <item
                 android:id="@+id/decoration_item"
-                android:title="Decoration" />
+                android:title="@string/decoration_menu_item_name" />
             <item
                 android:id="@+id/blocks_item"
-                android:title="Blocks" />
+                android:title="@string/blocks_menu_item_name" />
             <item
                 android:id="@+id/animals_item"
-                android:title="Animals" />
+                android:title="@string/animals_menu_item_name" />
             <item
                 android:id="@+id/humans_item"
-                android:title="Humans" />
+                android:title="@string/humans_menu_item_name" />
         </menu>
     </item>
 </menu>
