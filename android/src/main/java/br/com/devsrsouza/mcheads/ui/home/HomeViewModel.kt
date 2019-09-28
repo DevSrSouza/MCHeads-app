@@ -22,11 +22,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val allHeads = headsRepository.heads
     //private val allHeads = MutableLiveData<List<Head>>()
 
-    private val _category = MutableLiveData<HeadCategory?>()
+    private val _category = MutableLiveData<HeadCategory?>(null)
     val category: LiveData<HeadCategory?> get() = _category
 
     private val _heads: MediatorLiveData<List<Head>> = MediatorLiveData()
     val heads: LiveData<List<Head>> get() = _heads
+
+    private val _search = MutableLiveData<String?>(null)
+    val search: LiveData<String?> = _search
 
     init {
         scope.launch {
@@ -36,18 +39,20 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         //getDebugHeads()
 
         _heads.addSource(allHeads) {
-            val category = category.value
-
-            _heads.value = if (category != null) {
-                it.filter { it.category == category }
-            } else it
+            _heads.value = it.filterCategory(category.value)
+                .filterSearch(search.value)
         }
         _heads.addSource(category) { category ->
             val all = allHeads.value
 
-            _heads.value = if (category != null)
-                all?.filter { it.category == category }
-            else all ?: emptyList()
+            _heads.value = all?.filterCategory(category)
+                ?.filterSearch(search.value)
+        }
+        _heads.addSource(search) { search ->
+            val all = allHeads.value
+
+            _heads.value = all?.filterCategory(category.value)
+                ?.filterSearch(search)
         }
     }
 
@@ -79,8 +84,19 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         _category.value = category
     }
 
+    // if null, no search
+    fun searchHeads(head: String?) {
+        val head = head?.toLowerCase()
+        if(_search.value == head) return
+
+        _search.value = head
+    }
+
     override fun onCleared() {
         super.onCleared()
         job.cancel()
     }
+
+    private fun List<Head>.filterCategory(category: HeadCategory?) = if(category != null) filter { it.category == category } else this
+    private fun List<Head>.filterSearch(search: String?) = if(search != null) filter { search in it.name.toLowerCase() } else this
 }

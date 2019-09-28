@@ -2,6 +2,7 @@ package br.com.devsrsouza.mcheads.ui.home
 
 import android.os.Bundle
 import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -46,6 +47,26 @@ class HomeFragment : Fragment() {
         this.menu = menu
 
         inflater.inflate(R.menu.home_menu, menu)
+
+        val search = menu.findItem(R.id.search_item)?.actionView as SearchView?
+
+        search?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean = true
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                viewModel.searchHeads(newText)
+
+                return true
+            }
+
+        })
+
+        search?.setOnCloseListener {
+            viewModel.searchHeads(null)
+
+             false
+        }
+
         super.onCreateOptionsMenu(menu, inflater)
     }
 
