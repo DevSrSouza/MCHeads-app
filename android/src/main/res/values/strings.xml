@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">MCHeads</string>
     <string name="image_head_description">A image of minecraft player head with their skin</string>
-    <string name="search_menu_item_name">Search</string>
-    <string name="categories_menu_item_name">Categories</string>
-    <string name="alphabet_menu_item_name">Alphabet</string>
-    <string name="monsters_menu_item_name">Monsters</string>
-    <string name="humanoid_menu_item_name">Humanoid</string>
-    <string name="food_and_drinks_menu_item_name">Food and Drinks</string>
-    <string name="miscellaneous_menu_item_name">Miscellaneous</string>
-    <string name="plants_menu_item_name">Plants</string>
-    <string name="decoration_menu_item_name">Decoration</string>
-    <string name="blocks_menu_item_name">Blocks</string>
-    <string name="animals_menu_item_name">Animals</string>
-    <string name="humans_menu_item_name">Humans</string>
+    <string name="search_menu_item_title">Search</string>
+    <string name="categories_menu_item_title">Categories</string>
+    <string name="alphabet_menu_item_title">Alphabet</string>
+    <string name="monsters_menu_item_title">Monsters</string>
+    <string name="humanoid_menu_item_title">Humanoid</string>
+    <string name="food_and_drinks_menu_item_title">Food and Drinks</string>
+    <string name="miscellaneous_menu_item_title">Miscellaneous</string>
+    <string name="plants_menu_item_title">Plants</string>
+    <string name="decoration_menu_item_title">Decoration</string>
+    <string name="blocks_menu_item_title">Blocks</string>
+    <string name="animals_menu_item_title">Animals</string>
+    <string name="humans_menu_item_title">Humans</string>
+    <string name="all_heads_menu_item_title">All Heads</string>
 </resources>

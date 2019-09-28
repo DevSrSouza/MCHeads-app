@@ -4,7 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.devsrsouza.mcheads.R
-import br.com.devsrsouza.mcheads.common.Head
+import br.com.devsrsouza.mcheads.data.domain.Head
 import coil.api.load
 
 @BindingAdapter("head_render")

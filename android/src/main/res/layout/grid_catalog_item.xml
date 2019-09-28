@@ -6,7 +6,7 @@
     <data>
         <variable
             name="head"
-            type="br.com.devsrsouza.mcheads.common.Head" />
+            type="br.com.devsrsouza.mcheads.data.domain.Head" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

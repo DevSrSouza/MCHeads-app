@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import br.com.devsrsouza.mcheads.common.Head
+import br.com.devsrsouza.mcheads.data.domain.Head
 import br.com.devsrsouza.mcheads.databinding.GridCatalogItemBinding
 
 class HeadGridAdapter : ListAdapter<Head, HeadGridAdapter.ViewHolder>(HeadDiffCallback()) {

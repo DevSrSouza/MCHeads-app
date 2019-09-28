@@ -88,8 +88,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:$lifecycle_version")
 
     // room
-    //implementation("androidx.room:room-runtime:$room_version")
-    //kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
 
     implementation("androidx.legacy:legacy-support-v4:$legacy_support_v4_version")
 
