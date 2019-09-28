@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="image_head_padding">16dp</dimen>
-    <dimen name="grid_head_card">160dp</dimen>
+    <dimen name="head_topBottom_padding">16dp</dimen>
+    <dimen name="name_head_padding">8dp</dimen>
+    <dimen name="grid_head_card_width">160dp</dimen>
+    <dimen name="grid_head_card_height">190dp</dimen>
     <dimen name="constraint_card_margin">4dp</dimen>
     <dimen name="card_margin">4dp</dimen>
     <dimen name="grid_margin">8dp</dimen>

@@ -18,8 +18,8 @@
             android:layout_marginBottom="@dimen/constraint_card_margin">
 
         <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/grid_head_card"
-                android:layout_height="@dimen/grid_head_card"
+                android:layout_width="@dimen/grid_head_card_width"
+                android:layout_height="@dimen/grid_head_card_height"
                 android:layout_marginStart="@dimen/card_margin"
                 android:layout_marginTop="@dimen/card_margin"
                 android:layout_marginEnd="@dimen/card_margin"
@@ -38,16 +38,32 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="@dimen/image_head_padding"
-                    android:layout_marginTop="@dimen/image_head_padding"
+                    android:layout_marginTop="@dimen/head_topBottom_padding"
                     android:layout_marginEnd="@dimen/image_head_padding"
-                    android:layout_marginBottom="@dimen/image_head_padding"
                     android:contentDescription="@string/image_head_description"
                     app:head_render="@{head}"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/head_name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
                     tools:srcCompat="@mipmap/default_head" />
+
+                <TextView
+                    android:id="@+id/head_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/name_head_padding"
+                    android:layout_marginEnd="@dimen/name_head_padding"
+                    android:layout_marginBottom="@dimen/head_topBottom_padding"
+                    android:text="@{head.name}"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head_image"
+                    tools:text="SrSouza" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
