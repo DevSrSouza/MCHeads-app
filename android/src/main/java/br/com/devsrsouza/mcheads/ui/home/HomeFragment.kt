@@ -13,10 +13,12 @@ import br.com.devsrsouza.mcheads.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+    private val debug = true
+
     private val viewModel: HomeViewModel by lazy {
         ViewModelProviders.of(
             this,
-            HomeViewModelFactory(activity!!.application)
+            HomeViewModelFactory(activity!!.application, debug)
         ).get<HomeViewModel>()
     }
 

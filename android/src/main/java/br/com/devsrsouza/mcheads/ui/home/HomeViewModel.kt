@@ -8,7 +8,10 @@ import br.com.devsrsouza.mcheads.data.domain.Head
 import br.com.devsrsouza.mcheads.data.repository.HeadsRepository
 import kotlinx.coroutines.*
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class HomeViewModel(
+    application: Application,
+    val debug: Boolean
+) : AndroidViewModel(application) {
 
     // Coroutines
     private var job = SupervisorJob()
@@ -19,8 +22,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val headsRepository = HeadsRepository(database)
 
     // LiveData
-    private val allHeads = headsRepository.heads
-    //private val allHeads = MutableLiveData<List<Head>>()
+    private val _debugHeads = MutableLiveData<List<Head>>()
+    private val allHeads: LiveData<List<Head>>
+        get() = if(debug) _debugHeads else headsRepository.heads
+
 
     private val _category = MutableLiveData<HeadCategory?>(null)
     val category: LiveData<HeadCategory?> get() = _category
@@ -32,11 +37,13 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val search: LiveData<String?> = _search
 
     init {
-        scope.launch {
-            headsRepository.refreshHeads()
+        if(!debug) {
+            scope.launch {
+                headsRepository.refreshHeads()
+            }
+        } else {
+            getDebugHeads()
         }
-
-        //getDebugHeads()
 
         _heads.addSource(allHeads) {
             _heads.value = it.filterCategory(category.value)
@@ -56,13 +63,13 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /*private fun getDebugHeads() {
+    private fun getDebugHeads() {
         var i = 0
         fun create(name: String, uuid: String, category: HeadCategory, imageUrl: String): Head {
             return Head(i++, name, uuid, "x", category, imageUrl)
         }
 
-        allHeads.value = listOf(
+        _debugHeads.value = listOf(
             create("SrSouza", "b4bfc262-b8b7-4391-88c2-d2d31ae5d919", HeadCategory.HUMANOID, "https://visage.surgeplay.com/head/256/b4bfc262b8b7439188c2d2d31ae5d919"),
             create("Rezzus", "9b2a30ec-f8b3-4dfe-bf49-9c5c367383f8", HeadCategory.HUMANOID,"https://visage.surgeplay.com/head/256/9b2a30ec-f8b3-4dfe-bf49-9c5c367383f8"),
             create("Kevinkool", "e3fbbbd8-9f22-408a-af32-47ac06f9c3e7", HeadCategory.PLANTS,"https://visage.surgeplay.com/head/256/e3fbbbd8-9f22-408a-af32-47ac06f9c3e7"),
@@ -75,7 +82,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             create("BulldogLucas", "e06f0e3e-523c-4781-9c1b-4386aceb710a", HeadCategory.MONSTERS,"https://visage.surgeplay.com/head/256/e06f0e3e-523c-4781-9c1b-4386aceb710a")
         )
 
-    }*/
+    }
 
     // if null, all heads
     fun updateCategory(category: HeadCategory?) {
